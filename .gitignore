@@ -1,0 +1,25 @@
+# 防止误传：答案、系统垃圾文件、解压出来的数据
+answers*.csv
+*answer*
+.DS_Store
+Thumbs.db
+__pycache__/
+DermaMNIST/
+
+# 各队提交 submissions/队名/ 里只要 submission.csv、代码、README.md：
+# 挡住数据文件夹和压缩包
+submissions/**/train/
+submissions/**/val/
+submissions/**/test/
+submissions/**/*.zip
+submissions/**/*.npz
+submissions/**/*.npy
+# 挡住模型权重
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.joblib
+*.h5
+*.safetensors
+*.onnx
