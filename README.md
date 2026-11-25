@@ -56,7 +56,9 @@ test_0001,2
 ## 📮 怎么交
 1. fork 本仓库 https://github.com/MedCraft-ShanghaiTech/dermamnist-practice
 2. 在 `submissions/队名/` 里放三样东西：`submission.csv`、代码、一个写了几句"我们怎么做的"的 `README.md`（不放模型权重和数据）。
-3. 向本仓库提一个 Pull Request。40 分钟内可以重复推送，以最后一次为准。
+3. 向本仓库提一个 Pull Request。
+
+40 分钟内可以再交：直接覆盖 `submissions/队名/submission.csv`（文件名不变，不要另存成 v2 之类），推送到同一个 PR，不用新开；以最后一次推送为准。
 
 这一步可以让 AI 帮你做。实在提不了 PR，就把 `submission.csv` 改名成"队名.csv"，微信发给工作组。
 
