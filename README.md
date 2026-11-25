@@ -60,7 +60,12 @@ test_0001,2
 
 30 分钟内可以再交：直接覆盖 `submissions/队名/submission.csv`（文件名不变，不要另存成 v2 之类），推送到同一个 PR，不用新开；以最后一次推送为准。
 
-这一步可以让 AI 帮你做。实在提不了 PR，就把 `submission.csv` 改名成"队名.csv"，微信发给工作组。
+**登录 GitHub**：fork、推送、开 PR 都要先登录，这一步得你自己来。
+- 推荐：让 AI 装 GitHub 命令行工具 `gh`，运行 `gh auth login --web`，你在浏览器里输入终端显示的 8 位码、点授权，登录一次；之后 fork、推送、开 PR 都可以交给 AI 用命令行做。
+- 不装 gh 也行：你在网页上点 Fork，让 AI 把文件推到你的 fork，推完在网页上点 Compare & pull request。
+- 不要把 GitHub 的密码或 token 发给 AI。
+
+实在提不了 PR，就把 `submission.csv` 改名成"队名.csv"，微信发给工作组。
 
 ## 🏆 评分与榜单
 - 限时 30 分钟，到点后由组织者统一打分（测试集答案只在组织者手里）；
