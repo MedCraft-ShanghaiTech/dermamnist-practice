@@ -2,7 +2,7 @@
 
 **任务**：用 `train/` 训练模型，预测 `test/` 里每张图的类别，存成 `submission.csv`。只用这里给的文件，不要下载 MedMNIST 原版（原版带测试集答案）。
 
-**提交格式**：`submission.csv` 和 `sample_submission.csv` 一样，两列 `id,label`；`test/` 里每张图一行，共 2005 行；`id` 是图片文件名去掉 `.png`（如 `test_0000`），`label` 填 0–6 的类别编号。交之前在解压出的 `DermaMNIST/` 文件夹里运行 `python score.py --check submission.csv` 检查格式。
+**提交格式**：`submission.csv` 和 `sample_submission.csv` 一样，两列 `id,label`；`test/` 里每张图一行，共 2005 行；`id` 是图片文件名去掉 `.png`（如 `test_0000`），`label` 填 0–6 的类别编号（0 光化性角化病和上皮内癌、1 基底细胞癌、2 良性角化样病变、3 皮肤纤维瘤、4 黑色素瘤、5 黑素细胞痣、6 血管病变，和 `labels.csv` 里的 `name_zh` 一一对应）。交之前在解压出的 `DermaMNIST/` 文件夹里运行 `python score.py --check submission.csv` 检查格式。
 
 **截止**：【现场公布】
 
