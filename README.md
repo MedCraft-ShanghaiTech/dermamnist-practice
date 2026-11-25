@@ -56,9 +56,9 @@ test_0001,2
 ## 📮 怎么交
 全程在 GitHub 网页上点，不用配命令行（先在浏览器里登录 GitHub）：
 1. 让 AI 在本地准备好一个 `队名/` 文件夹，里面三样东西：`submission.csv`、代码、一个写了几句"我们怎么做的"的 `README.md`（不放模型权重和数据）。
-2. 打开本仓库 https://github.com/MedCraft-ShanghaiTech/dermamnist-practice ，点右上角 **Fork**。
+2. 打开本仓库 https://github.com/MedCraft-ShanghaiTech/dermamnist-practice ，点右上角 **Fork**；在 Create a new fork 页面，**Owner 选你自己的用户名**，其余不动，点 **Create fork**。
 3. 在你 fork 出来的仓库里进 `submissions/` → **Add file → Upload files**，把 `队名` 文件夹整个拖进去 → **Commit changes**。
-4. 回到你 fork 的首页 → **Contribute → Open pull request → Create pull request**。
+4. 回到你 fork 的首页 → **Contribute → Open pull request**；确认页面顶部写着 `base repository: MedCraft-ShanghaiTech/dermamnist-practice`，点 **Create pull request**。
 
 30 分钟内可以再交：同样上传，覆盖 `submissions/队名/submission.csv`（文件名不变，不要另存成 v2 之类），PR 会自动更新，不用新开；以最后一次为准。
 
