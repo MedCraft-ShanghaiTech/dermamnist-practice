@@ -13,7 +13,7 @@
 """
 # 组织者：不写第二个参数时，算分默认用本文件旁边的 answers.csv（测试集答案，不在数据包里）。
 # 批量打分脚本 make_leaderboard.py 会 import 本文件的 read_answers / read_submission / score，
-# 学生自查和组织者打分用的是同一份读文件、算分逻辑。
+# 自查和批量处理共用这一份读文件、算分代码。
 import csv
 import sys
 from pathlib import Path
