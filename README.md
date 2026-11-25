@@ -1,15 +1,84 @@
-# 实践题：皮肤镜图片 7 分类（DermaMNIST）
+# 🔬 皮肤镜病变 7 分类挑战（DermaMNIST）
 
-**任务**：用 `train/` 训练模型，预测 `test/` 里每张图的类别，存成 `submission.csv`。只用这里给的文件，不要下载 MedMNIST 原版（原版带测试集答案）。
+> MedCraft「见微」论坛第二期 · 现场实践　|　两人一组　|　11 月 25 日现场赛
 
-**提交格式**：`submission.csv` 和 `sample_submission.csv` 一样，两列 `id,label`；`test/` 里每张图一行，共 2005 行；`id` 是图片文件名去掉 `.png`（如 `test_0000`），`label` 填 0–6 的类别编号（0 光化性角化病和上皮内癌、1 基底细胞癌、2 良性角化样病变、3 皮肤纤维瘤、4 黑色素瘤、5 黑素细胞痣、6 血管病变，和 `labels.csv` 里的 `name_zh` 一一对应）。交之前在解压出的 `DermaMNIST/` 文件夹里运行 `python score.py --check submission.csv` 检查格式。
+**一句话**：给一张皮肤镜照片，判断它属于 7 类皮肤病变里的哪一类。
 
-**截止**：【现场公布】
+---
 
-**怎么交**：fork https://github.com/MedCraft-ShanghaiTech/dermamnist-practice ，在 `submissions/队名/` 里放 `submission.csv`、代码和一个 `README.md`（几句"我们怎么做的"），不放模型权重和数据，再提一个 Pull Request。提不了的话，把 `submission.csv` 改名成"队名.csv"微信发给工作组。
+## 📌 赛题背景
+皮肤镜是皮肤科医生看痣和皮损时用的放大镜头。本题的照片来自公开的皮肤镜图库，每张都由医生给出了诊断类别。你的任务是训练一个模型，自动给没见过的照片分类。
 
-**结果**：截止后统一打分投屏，只显示队名，不评奖。`score.py` 也能在 `val/` 上算几项常用指标，用法见文件开头。
+## 🚀 快速开始
+1. 下载 `DermaMNIST.zip`（群文件，或本仓库），解压到一个新文件夹。
+2. 用 Trae 打开解压出的 `DermaMNIST/` 文件夹，点"信任"。
+3. 让 AI 先读这份 README，用大白话讲清：输入是什么、要输出什么、怎么交。
 
-**建议**：先搞清任务，跑通再改进；省着用积分。
+## 🗂 数据
+每张图是 28×28 像素的彩色 PNG。
 
-**数据许可**：MedMNIST v2 的 DermaMNIST 子集（原图来自 HAM10000），CC BY-NC 4.0，仅限非商业用途。引用：Yang J, et al. MedMNIST v2. *Scientific Data*, 2023；Tschandl P, et al. The HAM10000 dataset. *Scientific Data* 5, 180161 (2018)。
+| 文件夹 / 文件 | 内容 | 张数 |
+|---|---|---|
+| `train/` | 训练用的图 + 标签 `labels.csv` | 7007 |
+| `val/` | 自查用的图 + 标签 `labels.csv` | 1003 |
+| `test/` | 要你预测的图，**没有标签** | 2005 |
+| `sample_submission.csv` | 提交格式样例 | 2005 行 |
+| `score.py` | 查提交格式；也能在 `val/` 上算几项常用指标 | |
+
+`labels.csv` 的列：`filename`（图片文件名）、`label`（类别编号）、`name_zh`（中文名）、`name_en`（英文名）。
+
+**7 个类别**
+
+| 编号 | 中文名 | 英文名 |
+|---|---|---|
+| 0 | 光化性角化病和上皮内癌 | actinic keratoses and intraepithelial carcinoma |
+| 1 | 基底细胞癌 | basal cell carcinoma |
+| 2 | 良性角化样病变 | benign keratosis-like lesions |
+| 3 | 皮肤纤维瘤 | dermatofibroma |
+| 4 | 黑色素瘤 | melanoma |
+| 5 | 黑素细胞痣 | melanocytic nevi |
+| 6 | 血管病变 | vascular lesions |
+
+## 📤 提交格式
+交一个 `submission.csv`，和 `sample_submission.csv` 格式一样：
+
+```
+id,label
+test_0000,5
+test_0001,2
+...
+```
+
+- 两列 `id,label`；`test/` 里每张图一行，共 2005 行；
+- `id` 是图片文件名去掉 `.png`（如 `test_0000`），`label` 填 0–6 的类别编号；
+- 交之前在 `DermaMNIST/` 文件夹里运行 `python score.py --check submission.csv` 检查格式。
+
+## 📮 怎么交
+1. fork 本仓库 https://github.com/MedCraft-ShanghaiTech/dermamnist-practice
+2. 在 `submissions/队名/` 里放三样东西：`submission.csv`、代码、一个写了几句"我们怎么做的"的 `README.md`（不放模型权重和数据）。
+3. 向本仓库提一个 Pull Request。截止前可以重复推送，以最后一次为准。
+
+这一步可以让 AI 帮你做。实在提不了 PR，就把 `submission.csv` 改名成"队名.csv"，微信发给工作组。
+
+## 🏆 评分与榜单
+- 测试集答案只在组织者手里，截止后统一打分；
+- 评分方式截止后揭晓；
+- 当场投屏榜单，只显示队名，**不评奖**。
+
+## ⏰ 时间线
+| 节点 | 时间 |
+|---|---|
+| 开始 | 11 月 25 日，实践环节开始时 |
+| 截止 | 【现场公布】 |
+| 揭榜 | 截止后当场投屏 |
+
+## 📜 规则
+- 两人一组，一队交一份；
+- 只用本数据包里的文件，**不要下载 MedMNIST 原版**（原版带测试集答案）；
+- 模型、方法、AI 工具都不限。
+
+## 💡 建议
+先搞清任务，跑通交一版，再改进；省着用积分，一个人的用完了换队友的账号；卡住了先把报错原样发给 AI。
+
+## 📚 数据来源与许可
+MedMNIST v2 的 DermaMNIST 子集（原图来自 HAM10000），CC BY-NC 4.0，仅限非商业用途。引用：Yang J, et al. MedMNIST v2. *Scientific Data*, 2023；Tschandl P, et al. The HAM10000 dataset. *Scientific Data* 5, 180161 (2018)。
