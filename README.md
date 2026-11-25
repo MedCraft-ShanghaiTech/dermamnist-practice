@@ -60,7 +60,7 @@ test_0001,2
 3. 在你 fork 出来的仓库里进 `submissions/` → **Add file → Upload files**，把 `队名` 文件夹整个拖进去 → **Commit changes**。
 4. 回到你 fork 的首页 → **Contribute → Open pull request**；确认页面顶部写着 `base repository: MedCraft-ShanghaiTech/dermamnist-practice`，点 **Create pull request**。
 
-30 分钟内可以再交：同样上传，覆盖 `submissions/队名/submission.csv`（文件名不变，不要另存成 v2 之类），PR 会自动更新，不用新开；以最后一次为准。
+30 分钟内可以再交：同样上传，覆盖 `submissions/队名/submission.csv`（文件名不变，不要另存成 v2 之类，也不要另建 `队名-v2` 这样的新文件夹，新文件夹会被当成另一支队），PR 会自动更新，不用新开；以最后一次为准。
 
 电脑上 git 已经能推送的，也可以让 AI 推到你的 fork，你再开 PR。不要把 GitHub 的密码或 token 发给 AI。
 
